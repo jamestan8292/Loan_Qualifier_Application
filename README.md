@@ -53,8 +53,8 @@ python app.py
 
 The following are the prompts you will see in your Terminal app.
 
-![Loan Qualifier Prompts](Images/loan_qualifier_1.png)
-![Loan Qualifier Prompts](Images/loan_qualifier_2.png)
+![Loan Qualifier Prompts](Images/loan_qualifier_display_1.png)
+![Loan Qualifier Prompts](Images/loan_qualifier_display_2.png)
 
 ---
 
