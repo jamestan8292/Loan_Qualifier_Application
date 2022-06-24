@@ -3,7 +3,7 @@
 
 This is a command line application to match applicants with qualifying loans.
 
-Example:
+To run app in Mac Terminal or Windows GitBash, enter:
     $ python app.py
 """
 import sys
@@ -116,43 +116,41 @@ def save_qualifying_loans(qualifying_loans):
         qualifying_loans (a list of lists): The qualifying bank loans.
     """
 
-  # Determines action to be taken - save or opt out.
+    # Check if there is qualifying loans to save. If none, exit
+    if len(qualifying_loans) == 0:
+        sys.exit("There is no qualifying loan")
+
+    # Determines action to be taken - save or opt out.
     action = questionary.select(
         "Would you like to save the qualifying loans to a csv file?",
         choices=["Yes", "No"],
     ).ask()
 
     if action == "No":  
-        # User selects No
-        sys.exit("The qualifying loans is not saved")
+        # User selects No /  Opt Out
+        sys.exit("The qualifying loans are not saved")
 
     else:
         # User selects Yes
 
-        # Check if there is any qualifying loans. In none, exit. If there is, proceed
-        if len(qualifying_loans) == 0:
-            sys.exit("There is no qualifying loan to save")
+        csvpath = questionary.text("Enter a file path to save the file, eg. data/qualifying_loans.csv:").ask()
+        csvpath = Path(csvpath)
 
-        else:
+        print("Saving qualifying loans to :", csvpath)
 
-            csvpath = questionary.text("Enter a file path to save the file, eg. data/qualifying_loans.csv:").ask()
-            csvpath = Path(csvpath)
+        # Header for csv file
+        header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
 
-            print("Saving qualifying loans to :", csvpath)
+        # Open file for writing
+        with open(csvpath, 'w', newline='') as csvfile:
 
-            # Header for csv file
-            header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Min Credit Score", "Interest Rate"]
+            csvwriter = csv.writer(csvfile)
 
-            # Open file for writing
-            with open(csvpath, 'w', newline='') as csvfile:
+            # Write header row first to file
+            csvwriter.writerow(header)
 
-                csvwriter = csv.writer(csvfile)
-
-                # Write header row first to file
-                csvwriter.writerow(header)
-
-                # Write all rows in qualifying_loans to file
-                csvwriter.writerows(qualifying_loans)
+            # Write all rows in qualifying_loans to file
+            csvwriter.writerows(qualifying_loans)
 
     return
 
