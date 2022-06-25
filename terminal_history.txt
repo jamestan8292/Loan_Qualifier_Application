@@ -1,0 +1,50 @@
+  485  python app.py
+  486  python app.py
+  487  git status
+  488  git add app.py
+  489  git add .gitignore
+  490  git commit -m "app.py save_qualifying_loans function logic revised."
+  491  git push
+  492  history 50 > terminal_history.txt
+  493  history 50 > terminal_history.txt
+  494  history
+  495  history 50
+  496  history help
+  497  history /?
+  498  history ?
+  499  history -h
+  500  man history
+  501  history
+  502  history -50
+  503  conda activate dev
+  504  /Users/james/Desktop/FinTech-Workspace/Module_2/cd /Users/james/Desktop/FinTech-Workspace/Module_2/Module_2_Challenge/loan_qualifier_app/Loan_Qualifier_Application/
+  505  ls
+  506  cd /Users/james/Desktop/FinTech-Workspace/Module_2/Module_2_Challenge/loan_qualifier_app/Loan_Qualifier_Application/
+  507  python app.py
+  508  ls
+  509  python app.py
+  510  ls
+  511  git add README.md
+  512  git add /Images
+  513  git add Images/
+  514  git status
+  515  git add .gitignore
+  516  git status
+  517  git status
+  518  git commit -m "Second commit with revised README.md"
+  519  git push
+  520  git add README.md
+  521  git status
+  522  git add README.md
+  523  git status
+  524  vim README.md
+  525  git status
+  526  conda activate dev
+  527  git status
+  528  cd /Users/james/Desktop/FinTech-Workspace/Module_2/Module_2_Challenge/loan_qualifier_app/Loan_Qualifier_Application
+  529  git status
+  530  git add README.md
+  531  git status
+  532  git commit -m "Revised commit to address display image error in README.md"
+  533  git push
+  534  history -100 > terminal_history.txt
